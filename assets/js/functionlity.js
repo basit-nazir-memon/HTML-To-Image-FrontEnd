@@ -1,5 +1,3 @@
-// BACKEND_URL = "https://adventurous-pig-snaps.cyclic.app"
-
 BACKEND_URL = "https://html-to-image-data-scrap-backend.onrender.com"
 
 // Add an event listener for when the input value changes
