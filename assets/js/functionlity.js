@@ -93,7 +93,7 @@ const handleMultipleSubmit = () => {
                     headers: {
                         'Content-Type': 'application/json'
                     },
-                    body: JSON.stringify({ linkText: lines[0], Imgtype: selectedValue })
+                    body: JSON.stringify({ linkText: line, Imgtype: selectedValue })
                 });
         
                 if (!response.ok) {
