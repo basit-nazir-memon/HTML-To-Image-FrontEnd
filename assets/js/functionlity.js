@@ -85,6 +85,7 @@ const handleMultipleSubmit = () => {
         var content = reader.result;
         var lines = content.split('\n');
 
+        let index = 1;
         for (const line of lines) {
             // console.log(line);
             try {
@@ -109,7 +110,7 @@ const handleMultipleSubmit = () => {
                 // Create a link element and simulate a click to trigger the download
                 const downloadLink = document.createElement('a');
                 downloadLink.href = imageURL;
-                downloadLink.download = 'image.' + (selectedValue === "PNG" ? 'png' : 'jpeg');
+                downloadLink.download = `ABS_${(new Date()).toDateString().replace(/\s+/g, '-')}_${index}`;
                 document.body.appendChild(downloadLink);
                 downloadLink.click();
                 document.body.removeChild(downloadLink);
@@ -121,6 +122,8 @@ const handleMultipleSubmit = () => {
             }
             // Add a delay between iterations if needed
             await new Promise(resolve => setTimeout(resolve, 5000)); // Adjust the delay time as needed
+
+            index++;
         }
     };
 
